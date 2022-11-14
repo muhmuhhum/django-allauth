@@ -19,6 +19,7 @@ class OAuth2Provider(Provider):
 
     def get_pkce_params(self):
         settings = self.get_settings()
+        print(*a, sep = ", ")
         if settings.get("OAUTH_PKCE_ENABLED", self.pkce_enabled_default):
             pkce_code_params = generate_code_challenge()
             return pkce_code_params
