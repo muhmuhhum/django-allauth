@@ -37,7 +37,6 @@ class ProviderRegistry(object):
                 try:
                     provider_module = importlib.import_module(app + ".provider")
                 except ImportError:
-                    print("Couldnt import provider " + app + ".provider")
                     pass
                 else:
                     for cls in getattr(provider_module, "provider_classes", []):
